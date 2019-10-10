@@ -49,19 +49,10 @@ public class TestGraph{
         testGraph.getKeyPath(g);
     }
 
-    public void initArray(int[] array, int num){
-        for (int i = 0; i < array.length; i++) {
-            array[i] = num;
-        }
-    }
-
     public void getKeyPath(Graph g){
         int[] a = new int[g.vexNum];
         int[] b = new int[g.vexNum];
         int[] c = new int[g.vexNum];
-        initArray(a, 0);
-        initArray(b, -10);
-        initArray(c, 0);
         for (int i = 0; i < g.vexNum; i++) {
             int max = 0;
             for (int j = 0; j < g.vexNum; j++) {
@@ -81,6 +72,7 @@ public class TestGraph{
             System.out.print(a[i] + "\t");
         }
         System.out.println();
+        System.out.println("最后一个结点到第一个结点的路径和长度为:");
         for(int i = g.vexNum-1; i >=0; i--){
             int max = 0;
             for (int j = g.vexNum-1; j >= 0; j--) {
@@ -97,6 +89,14 @@ public class TestGraph{
         for (int i = 0; i < g.vexNum; i++) {
             System.out.print(b[i] + "\t");
         }
+        System.out.println();
+        System.out.println("关键路径为: ");
+        for (int i = 0; i < g.vexNum; i++) {
+            if(a[i] == a[g.vexNum-1] - b[i]){
+                System.out.print(g.vexs[i] + "\t");
+            }
+        }
+
     }
 
 
