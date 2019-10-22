@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		body{
+			border: 1px black solid;
+		}
+		#box1{
+			width: 200px;
+			border: 1px black solid;
+		}
+		#box2{
+			width:100px;
+			height: 200px;
+			background-color: green;
+			float: left;
+		}
+		.clear:after{
+			content: '';
+			clear: both;
+			display: block;
+		}
+		</style>
+	</head>
+	<body>
+		
+		<div id="box1" class="clear">
+			<div id = "box2">
+				
+			</div>
+		</div>
+	</body>
+</html>
