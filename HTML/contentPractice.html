@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				margin: 0; padding: 0; font-family: sans-serif;	background: #34495e;
+			}
+			.box{
+				width: 500px; padding: 40px; top: 50%; left: 50%; transform: translate(-50%, -50%);
+				position: absolute; background: #191919;	text-align: center;
+			}
+			.box:hover{
+				box-shadow: 3px 5px 10px 5px #CCCCCC;
+				background: linear-gradient(235deg, #89ff00, #060c21, #00bcd4);
+			}
+			
+			.box h1{
+				color: white; text-align: center; font-weight: 500;
+			}
+			.box span{
+				color: white; font-size: 18px; display:inline-block; width: 80px;
+			}
+			.box input[type="text"], .box input[type="password"]{
+				font-size: 18px; margin: 20px auto;border: 0;border: 2px solid #2ecc71;
+			}
+			
+			.box input[type="submit"]{
+				background: none;
+				display: block;
+				margin: 20px auto;
+				text-align: center;
+				border: 2px solid #2ecc71;
+				padding: 14px 40px;
+			}
+
+			.box input[type="submit"]:hover{
+				background: goldenrod;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="post" class="box">
+			<h1>登陆页面</h1>
+			<span>用户名：</span><input type="text" placeholder="请输入用户名" id="username"/><p id="nameMessage"></p><br />
+			<span>密码：</span><input type="password" placeholder="请输入密码" id="password"/><p id="pwdMessage"></p><br />
+			<input type="submit" value="submit"  onclick="myClick()"/>
+		</form>
+		<script>
+			function commonMethod(str){
+				var obj = document.getElementById(str).value.trim();
+				var regex = /\S/;
+				if(!regex.test(obj)){
+					return false;
+				}else{
+					return true;
+				}
+			}
+			function myClick(){
+				if(!commonMethod("username")){
+					document.getElementById("nameMessage").innerHTML = "用户名有误";
+					document.getElementById("nameMessage").style.color = "red";
+				}else{
+					document.getElementById("nameMessage").innerHTML = "校验通过";
+					document.getElementById("nameMessage").style.color = "mediumspringgreen";
+				}
+				if(!commonMethod("password")){
+					document.getElementById("pwdMessage").innerHTML = "密码格式有误";
+					document.getElementById("pwdMessage").style.color = "red";
+				}else{
+					document.getElementById("pwdMessage").innerHTML = "校验通过";
+					document.getElementById("pwdMessage").style.color = "mediumspringgreen";
+				}
+				
+			}
+		</script>
+	</body>
+</html>
