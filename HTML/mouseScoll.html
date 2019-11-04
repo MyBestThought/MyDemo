@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px; height: 100px; background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		
+		<script>
+			var box = document.getElementById("box");
+			box.onmousewheel = function(){
+				if(event.wheelDelta >0){
+					box.style.height = box.clientHeight - 10 +"px";
+				}else{
+					box.style.height = box.clientHeight + 10 +"px";
+				}
+				return false;
+			};
+		</script>
+	</body>
+</html>
