@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0; padding: 0;
+			}
+			body{
+				display: flex; justify-content: center; align-items: center;
+				min-height: 100vh; transition: 0.5s;
+			}
+			ul{
+				position: relative;
+			}
+			ul li{
+				list-style: none;
+			}
+			
+			ul li a{
+				position: relative; font-size: 3em; color: #111; font-weight: 700;
+				text-decoration: none; transition: 0.5s;
+			}
+			ul:hover li a{
+				color: rgba(0, 0, 0, .1);
+			}
+			ul li:hover a{
+				color: #00BCD4; text-shadow: 0 2px rgba(0,0,0,.2);
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li onmouseover="javascript:changeColor('ff6b6b')" onmouseout="javascript:changeColor('transparent')"><a href="#">首页</a></li>
+			<li onmouseover="javascript:changeColor('4B0082')" onmouseout="javascript:changeColor('transparent')"><a href="#">手机数码</a></li>
+			<li onmouseover="javascript:changeColor('BA55D3')" onmouseout="javascript:changeColor('transparent')"><a href="#">生活用品</a></li>
+			<li onmouseover="javascript:changeColor('2F4F4F')" onmouseout="javascript:changeColor('transparent')"><a href="#">时尚服饰</a></li>
+			<li onmouseover="javascript:changeColor('FFFF00')" onmouseout="javascript:changeColor('transparent')"><a href="#">电脑办公</a></li>
+			<li onmouseover="javascript:changeColor('FFA500')" onmouseout="javascript:changeColor('transparent')"><a href="#">精美好品</a></li>
+			<li onmouseover="javascript:changeColor('FA8072')" onmouseout="javascript:changeColor('transparent')"><a href="#">其他</a></li>
+		</ul>
+		
+		<script>
+			function changeColor(color){
+				document.bgColor = color;
+			}
+		</script>
+	</body>
+</html>
