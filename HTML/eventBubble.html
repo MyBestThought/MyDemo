@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 200px; height: 200px; background: teal; border: 1px solid black;
+			}
+			#sp{
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="box">
+			Hello I am div
+			<span id="sp">
+				I am span.
+			</span>
+		</div>
+		<script>
+		/**
+		 * 事件冒泡：所谓的冒泡指的就是事件的向上传导，当后代元素上的事件被触发时，其祖先元素的相同事件也会被触发
+		 * 若果不希望发生，可以进行取消：event.cancelBubble = true;
+		 * 
+		 */
+		var sp = document.getElementById("sp");
+		sp.onclick = function(event){
+			//浏览器事件兼容
+			event = event || window.event;
+			alert("我是span标签");
+			//
+			event.cancelBubble = true;
+		};
+		
+		var box = document.getElementById("box");
+		box.onclick = function(event){
+			event = event || window.event;
+			alert("我是div标签");
+			event.cancelBubble = true;
+		};
+		
+		document.body.onclick = function(){
+			alert("我是Body");
+		};
+		</script>
+	</body>
+</html>
