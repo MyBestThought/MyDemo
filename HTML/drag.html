@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px; height: 100px; background: red;position: absolute;
+			}
+			#box2{
+				width: 100px; height: 100px; background: yellow;position: absolute; left: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		Hello world
+		<div id="box">
+			
+		</div>
+		
+		<div id="box2">
+			
+		</div>
+		<script>
+			var box = document.getElementById("box");
+			
+			box.onmousedown = function(event){
+				event = event || window.event;
+				//div的偏移量 鼠标.clientX - 元素.offsetX
+				//div的偏移量 鼠标.clientY - 元素.offsetY
+				var ol = event.clientX - box.offsetLeft;
+				var ot = event.clientY - box.offsetTop;
+				
+				
+				document.onmousemove = function (event){
+					event = event || window.event;
+					var left = event.clientX - ol;
+					var top = event.clientY - ot;
+					box.style.left = left + "px";
+					box.style.top = top + "px";
+				
+				};
+				
+				
+				document.onmouseup = function(){
+					document.onmousemove = null;
+					document.onmouseup = null;
+				}
+			};
+			
+			
+			
+		</script>
+	</body>
+</html>
