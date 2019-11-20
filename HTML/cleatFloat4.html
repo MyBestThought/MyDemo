@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0; padding: 0;  color: #ffffff; line-height: 200px; font-size: 20px; text-align: center;
+ 			}
+			.box{
+				width: 1200px; margin: 0 auto; border: 2px solid blank;
+				height: 800px;
+			}
+			.left{
+				width: 200px; height: 400px; background-color: red;
+				float: left;
+			}
+			.content{
+				height: 500px; background-color: blue; line-height: 30px;
+				float: left;
+				width: 800px;
+			}
+			.right{
+				width: 200px; height: 400px; background-color: orange;
+				float: left;
+			}
+			.footer{
+				width: 800px; height: 100px; background-color: darksalmon;
+				clear: both;
+				margin: 50px auto;
+			}
+			.big{
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="big">
+				<div class="left">我是左边</div>
+				<div class="content">
+					我是中间<br /><br /><br />
+					我是中间<br /><br /><br />
+					我是中间<br /><br /><br />
+					我是中间<br /><br /><br />
+					我是中间<br /><br /><br />
+					我是中间<br /><br /><br />
+					
+				</div>
+				<div class="right">我是右边</div>
+			</div>
+			<div class="footer">我是底部</div>
+		</div>
+	</body>
+</html>
+
+<!--
+	浮动解决方法：
+		三个元素都浮动，控制好宽度，不要重叠，父元素能够容纳，父元素加上overflow:hidden
+	
+		圣杯布局：三个元素都浮动，主要内容区先写，给left加上margin-left；0=-100%移动到相应位置，right想左移动自身宽度
+		处理内容区域遮挡问题：通过padding，切记内容区域不要加宽度
+		
+		双飞翼布局：三个元素都浮动，主要内容区先写，给left加上margin-left；0=-100%移动到相应位置，right想左移动自身宽度
+		处理内容区域遮挡问题：添加一个元素包裹内容放在内容区域，通过加margin来控制两边距离
+		
+		浮动解决：
+		先将左右浮动元素先写，然后子啊写不浮动的内容区域，内容区域会自动上去，因为浮动元素不占据位置
+		遮挡问题：
+			padding:0 200px
+			maring:0 200px
+			overflow:hidden
+			切记：不要给内容区域加宽度
+-->
