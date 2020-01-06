@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table{
+				margin: 30px auto;
+			}
+			table th{
+				width: 150px;
+				height: 60px;
+				text-align: center;
+			}
+			table td{
+				width: 120px;
+				height: 40px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<table border="1px" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr >
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>国家</th>
+					<th>评价</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>曹操</td>
+					<td>56</td>
+					<td>魏国</td>
+					<td>魏武帝</td>
+				</tr>
+				<tr>
+					<td>刘备</td>
+					<td>66</td>
+					<td>蜀国</td>
+					<td>汉昭烈帝</td>
+				</tr>
+				<tr>
+					<td>孙权</td>
+					<td>71</td>
+					<td>吴国</td>
+					<td>大帝</td>
+				</tr>
+				<tr>
+					<td>曹丕</td>
+					<td>26</td>
+					<td>魏国</td>
+					<td>魏文帝</td>
+				</tr>
+			</tbody>
+		</table>
+			
+			<script>
+				var trs = document.querySelector("tbody").getElementsByTagName("tr");
+				for(var i=0; i < trs.length; i++){
+					trs[i].onmouseover = function(){
+						this.style.backgroundColor = "yellowgreen";
+					}
+					trs[i].onmouseout = function(){
+						this.style.backgroundColor = "";
+					}
+				}
+			</script>
+	</body>
+</html>
