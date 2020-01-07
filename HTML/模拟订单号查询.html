@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.search{
+				width: 178px;
+				height: 100px;
+				position: relative;
+				margin: 40px auto;
+				background-color: silver;
+			}
+			.search .con{
+				display: none;
+				position: absolute;
+				top: 5px;
+				width: 171px;
+				border: 1px solid rgba(0,0,0,.2);
+				box-shadow: 0 2px 4px rgba(0,0,0,.2);
+				padding: 5px 0;
+				font-size: 18px;
+				line-height: 20px;
+				color: #333;
+				background-color: #FFFFFF;
+			}
+			
+			.search .message{
+				position: absolute;
+				top: 45px;
+				width: 171px;
+				border: 1px solid rgba(0,0,0,.2);
+				box-shadow: 0 2px 4px rgba(0,0,0,.2);
+				padding: 5px 0;
+				font-size: 18px;
+				line-height: 20px;
+				color: #333;
+			}
+
+			.con::before{
+				content: "";
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: 31px;
+				left: 18px;
+				border: 8px solid #000000;
+				border-style: solid dashed dashed;
+				border-color: #fff transparent transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="search">
+			<div class="con">Hello</div>
+			<input type="text" placeholder="请输入用户名" class="message"/>
+		</div>
+		<script>
+			var con = document.querySelector(".con");
+			var input = document.querySelector(".message");
+			input.addEventListener("keyup", function(e){
+				if(this.value == ""){
+					con.style.display = "none";
+				}else{
+					con.style.display = "block";
+					con.innerText = this.value;					
+				}
+			});
+			//失去焦点则隐藏
+			input.addEventListener("blur", function(){
+				con.style.display = "none";
+			});
+			
+			input.addEventListener("focus", function(){
+				if(this.value !== ""){
+					con.style.display = "block";
+				}
+			});
+		</script>
+	</body>
+</html>
