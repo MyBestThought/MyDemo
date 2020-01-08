@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		我不想和你分享
+	</body>
+	<script>
+		//禁用右键菜单
+		document.addEventListener("contextmenu", function(e){
+			e.preventDefault();
+		});
+		//禁止选中文字
+		document.addEventListener("selectstart", function(e){
+			e.preventDefault();
+		});
+	</script>
+</html>
