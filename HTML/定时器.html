@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.timer{
+				width: 60%;
+				height: 200px;
+				margin: 60px auto;
+			}
+			.timer span{
+				background-color: black;
+				border: 1px solid black;
+				color: white;
+				width: 40px;
+				height: 40px;
+				margin-left: 20px;
+				display: inline-block;
+				text-align: center;
+				line-height: 40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="timer">
+			<span class="hour"></span>
+			<span class="minute"></span>
+			<span class="second"></span>
+		</div>
+		<script>
+			//将当前的时间显示在页面上
+			var hour = document.querySelector(".hour");
+			var minute = document.querySelector(".minute");
+			var second = document.querySelector(".second");
+			setInterval(function(){
+				var date = new Date();
+				hour.innerHTML = date.getHours();
+				minute.innerHTML = date.getMinutes();
+				second.innerHTML = date.getSeconds();
+			}, 0);
+		</script>
+	</body>
+</html>
