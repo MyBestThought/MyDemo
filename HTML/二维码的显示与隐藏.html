@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.box{
+				width: 100px;
+				margin: 100px auto;
+				height: 100px;
+				position: relative;
+				text-align: center;
+			}
+			.box img{
+				display: block;
+				width: 100px;
+				height: 100px;
+			}
+			.box i{
+				border: 1px solid black;
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				top: 20px;
+				left: -24px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			二维码
+			<img src="../images/TB1ibGql67nBKNjSZLeXXbxCFXa_!!0-item_pic.jpg_468x468q75.jpg"/>
+			<i id="close">X</i>
+		</div>
+		<script>
+			var close = document.getElementById("close");
+			var show = document.querySelector("div");
+			close.onclick = function(){
+				show.style.display = "none";
+			}
+		</script>
+	</body>
+</html>
