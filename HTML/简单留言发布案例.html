@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			textarea{
+				width: 200px;
+				height: 100px;
+				margin: 20px auto;
+				border: 1px solid red;
+				display: block;
+			}
+			button{
+				display: block;
+				margin: 20px auto;
+			}
+			li{
+				width: 200px;
+				background-color: palegreen;
+				margin-left: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea name=""></textarea>
+		<button class="publish">发布留言</button>
+		<ul>
+			
+		</ul>
+		<script>
+			var publish = document.querySelector(".publish");
+			var ul = document.querySelector("ul");
+			publish.onclick = function(){
+				var li = document.createElement("li");
+				var value = document.querySelector("textarea").value;
+				if(value === ""){
+					alert("content is null");
+				}else{
+					li.innerHTML = value + "<a href='javascript:;'>删除</a>";
+					ul.appendChild(li);
+				}
+				
+				var as = document.querySelectorAll("a");
+				for(var i=0; i < as.length; i++){
+					as[i].onclick = function(){
+						ul.removeChild(this.parentNode);
+					}
+				}
+			}
+			
+
+		</script>
+	</body>
+</html>
