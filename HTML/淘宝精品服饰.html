@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			img{
+				width: 200px;
+				height: 248px;
+				display: block;
+			}
+			.wrapper{
+				width: 300px;
+				height: 248px;
+				margin: 50px auto;
+			
+			}
+			.wrapper ul{
+				width: 50px;
+				height: 250px;
+				display: block;
+				float: left;
+			}
+			#left li{
+				width: 50px;
+				height: 60px;
+				text-align: center;
+				background-color: palegreen;
+				border: 1px solid palevioletred;
+			}		
+			/*.wrapper .content div{
+				float: left;
+			}*/
+			.wrapper .content img{
+				display: none;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery.min.js" ></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<ul id="left">
+				<li>古装</li>
+				<li>生活</li>
+				<li>时尚</li>
+				<li>百搭</li>
+			</ul>
+			<div class="content">
+				<div>
+					<img src="../img/image1.jpg">
+				</div>
+				<div>
+					<img src="../img/image2.jpg">
+				</div
+				<div>
+					<img src="../img/image3.jpg" >
+				</div>
+				<div>
+					<img src="../img/image4.jpg">
+				</div>
+				
+			</div>
+		</div>
+		<script>
+			$("#left li").mouseover(function(){
+				var index = $(this).index();
+				console.log(index);
+				$(".content div img").eq(index).show();
+				$(".content div img").eq(index).siblings().hide();
+			});
+		</script>
+	</body>
+</html>
