@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			a{
+				text-decoration:none;
+			}
+			.operation{
+				width: 500px;
+				margin: 40px auto;
+			}
+			div input{
+				width: 50px;
+				height: 40px;
+				float: left;
+				text-align: center;
+			}
+			.sub{
+				width: 50px;
+				height: 40px;
+				border: 1px solid black;
+				display: block;
+				float: left;
+				border-right: none;
+				text-align: center;
+				line-height: 40px;
+				color: black;
+				background-color: darkgrey;
+			}
+			.add{
+				width: 50px;
+				height: 40px;
+				border: 1px solid black;
+				display: block;
+				float: left;
+				border-left: none;
+				text-align: center;
+				line-height: 40px;
+				color:black;
+				background-color: darkgrey;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="operation">
+			<a href="javascript:;" class="sub">-</a>
+			<input type="text" value="1" disabled="disabled" class="account"/>
+			<a href="javascript:;" class="add">+</a>
+		</div>
+		<!--<div class="operation">
+			<a href="javascript:;" class="sub">-</a>
+			<input type="text" value="1" disabled="disabled"/>
+			<a href="javascript:;" class="add">+</a>
+		</div>-->
+		<script>
+			$(".add").click(function(){
+				var n = $(this).siblings(".account").val();
+				n++;
+				$(this).siblings(".account").val(n);
+			});
+			$(".sub").click(function(){
+				var n = $(this).siblings(".account").val();
+				if(n== 1){
+					alert("this value is 1, please don't sub");
+				}else{
+					n--;
+					$(this).siblings(".account").val(n);						
+				}
+				
+			});
+		</script>
+	</body>
+</html>
